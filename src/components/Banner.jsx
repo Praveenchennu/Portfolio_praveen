@@ -71,7 +71,7 @@ const Banner = () => {
               </button>
             </a>
           </Col>
-          <Col xs={12} md={5} xl={5} className='p-5 pt-1 p-md-0 px-lg-5 m-auto'>
+          <Col xs={12} md={5} xl={5} className='p-5 pt-1 p-md-0 px-lg-4 m-auto'>
             <img src={bannerimg} alt="My image" className=' bannerimg m-auto animate__animated animate__zoomIn' />
           </Col>
         </div>
