@@ -19,7 +19,7 @@ const educationData = [
 
 const Education = () => {
     return (
-        <div className='education' id='education'>
+        <div className='education pt-5' id='education'>
 
             <Container className="education-journey pb-5 ">
                 <h1 className="head pt-4 pb-4">Education</h1>

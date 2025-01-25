@@ -20,7 +20,7 @@ const Experience = () => {
     },
     {
       title: 'Full Stack Developer | Summer Intern',
-      company: 'henotic_logo',
+      company: 'Henotic technologies',
       date: 'Mar - May 2023',
       icon: henotic_logo,
     },
@@ -40,7 +40,8 @@ const Experience = () => {
                 padding: '17px',
                 borderRadius: '30px',
                 boxShadow: '0px 0px 5px rgb(198, 198, 198)',
-                border:'7px solid rgb(111, 113, 120)'
+                border:'7px solid rgb(111, 113, 120)',
+                minWidth:'46%'
               }}
               contentArrowStyle={{
                 borderRight: '7px solid rgb(211, 211, 211)',

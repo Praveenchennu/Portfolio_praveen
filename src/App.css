@@ -18,7 +18,7 @@
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   body {
     font-size: 14px;
     overflow-x: hidden;
@@ -84,11 +84,7 @@ body {
 #projects{
   background:#0a0a0a;
 }
-#connect{
-  /* background:#111417; */
-  background:url("./assets/img/wave-background.jpg");
-  background-size: cover;
-}
+
 .container{
   padding-left: 8% ;
   padding-right: 8% ;
@@ -144,7 +140,7 @@ p.danger {
 /* Navbar Style */
 
 nav.navbar {
-  padding: 18px 0;
+  padding: 1.3%;
   position: fixed;
   width: 100%;
   top: 0;
@@ -470,6 +466,12 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 
 /* Lets Connect */
+.innerconnect{
+  /* background:#111417; */
+  background:url("./assets/img/wave-background.jpg");
+  background-size: cover;
+}
+
 .connect {
 background:#0a0b0e;
 }
@@ -477,25 +479,26 @@ background:#0a0b0e;
 .field {
   background: transparent;
   border-radius: 20px;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   margin-bottom: 20px;
 }
 
 ::placeholder {
-  color: rgb(114, 114, 114);
+  color: rgb(125, 125, 125);
 }
 
 .inp {
   width: 49%;
-  background-color: white;
+  background-color: rgb(241, 239, 239);
+  color: #000;
 }
 
 
 .getintouch {
-  width: 120%;
+  width: 116%;
   height: auto;
   animation: zoomInOut 1s infinite ease-in-out;
-  filter : drop-shadow(5px 5px 70px rgba(255, 255, 255, 0.5))
+  filter : drop-shadow(5px 5px 70px rgba(193, 191, 191, 0.5))
 }
 
 @keyframes zoomInOut {

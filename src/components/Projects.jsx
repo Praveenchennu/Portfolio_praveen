@@ -31,7 +31,7 @@ const Projects = () => {
             <Container>
                 <Row>
                     <h1 className="head pb-3 text-start text-white m-0">Projects</h1>
-                    {/* <div className='text-end pe-3'>{`Scroll to see more>>`}</div> */}
+                    <div className='text-end pe-3 d-block d-md-none'>{`Scroll to see more>>`}</div>
                     <div className="projectcards d-flex justify-content-evenly ps-3">
                         
                         {projects.map((item, index) => (

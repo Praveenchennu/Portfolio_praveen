@@ -54,18 +54,18 @@ const LetsConnect = () => {
     };
 
     return (
-        <div className="connect App py-2 px-4" id="connect">
-            <Container>
+        <div className="connect App py-5 px-4" id="connect">
+            <Container className="py-5">
                 <Row>
-                    <div className="pb-5 d-flex justify-content-center">
+                    <div className="innerconnect d-flex justify-content-center border rounded-5 px-5 py-2">
                         <form
                             xs={12}
                             md={6}
-                            className="col-lg-6 animate__animated animate__fadeIn pt-3"
+                            className="col-lg-6 animate__animated animate__fadeIn"
                             onSubmit={formdetails}
                         >
                             <div className="col-11">
-                                <h1 className="head py-5">Get In Touch</h1>
+                                <h1 className="head pb-3 pt-3">Get In Touch</h1>
                                 <div className="ps-3 text-center">
                                     <div className="fields d-flex justify-content-between w-100">
                                         <input
@@ -79,7 +79,7 @@ const LetsConnect = () => {
                                             type="text"
                                             name="last_name"
                                             placeholder="Last name"
-                                            className="field inp border p-3"
+                                            className="field inp border p-3 "
                                             required
                                         />
                                     </div>
@@ -87,16 +87,16 @@ const LetsConnect = () => {
                                         type="email"
                                         name="email"
                                         placeholder="Email"
-                                        className="field border col-12 p-3 bg-white"
+                                        className="field border col-12 p-3 bg-light"
                                         required
                                     />
                                     <textarea
                                         name="message"
-                                        className="field p-5 px-4 pt-4 col-12 border bg-white"
+                                        className="field p-5 px-4 pt-4 col-12 border bg-light"
                                         placeholder="Message"
                                         required
                                     ></textarea>
-                                    <div className="status-container">
+                                    <div className="status-container pb-3">
                                         <button
                                             type="submit"
                                             className="letsconnect rounded col-4 w-auto border"

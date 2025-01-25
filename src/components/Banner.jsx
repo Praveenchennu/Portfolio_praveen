@@ -53,12 +53,12 @@ const Banner = () => {
       </div>
 
       {/* Banner content */}
-      <Container>
-        <div className='d-flex flex-column-reverse flex-md-row px-0 px-md-3'>
-          <Col xs={12} md={7} xl={7} className='animate__animated animate__fadeIn'>
+      <Container className=''>
+        <div className='d-flex flex-column-reverse flex-lg-row px-0 px-md-0'>
+          <Col xs={12} md={12} lg={8} xl={7} className='animate__animated animate__fadeIn'>
             <span className='tagline fs-5 mt-4'>Welcome to my portfolio ..!</span>
             <h1 className='name'>
-              Hi... 👋 I'm Praveen Chennu ! <span className="txt-rotate"><span className="wrap">{text}</span></span>
+              Hi... 👋 I'm Praveen Chennu ! <br/><span className="txt-rotate"><span className="wrap">{text}</span></span>
             </h1>
             <p className='des fs-5 pb-5 justify-text'>
               <span className='tagline pb-0 mb-0 fs-5'>Aspiring Software Developer</span> with a passion for building scalable applications and exploring innovative solutions using modern technologies.
@@ -71,7 +71,7 @@ const Banner = () => {
               </button>
             </a>
           </Col>
-          <Col xs={12} md={5} xl={5} className='p-5 pt-1 p-md-0 px-lg-5 m-auto'>
+          <Col xs={12} md={6} lg={6} xl={5} className='p-5 py-1 p-md-0 px-lg-4 m-auto'>
             <img src={bannerimg} alt="My image" className=' bannerimg m-auto animate__animated animate__zoomIn' />
           </Col>
         </div>
