@@ -4,8 +4,8 @@ import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
 import navIcon4 from "../assets/img/nav-icon4.svg";
-import mail from "../assets/img/footer/mail.png";
-import pin from "../assets/img/footer/pin.png";
+import mail from "../assets/img/Footer/mail.png";
+import pin from "../assets/img/Footer/pin.png";
 
 
 const Footer = () => {
