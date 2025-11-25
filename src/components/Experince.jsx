@@ -1,107 +1,152 @@
-import React from 'react';
+import React from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import { Container } from 'react-bootstrap';
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
-import miniorange from '../assets/img/Experience/miniorange-logo.png';
-import henotic_logo from '../assets/img/Experience/henotic_logo.jpg';
-import destination from '../assets/img/Experience/destination.png';
+import SectionWrapper from "./SectionWrapper";
+import { Container } from "react-bootstrap";
+
+// IMAGES
+import Meril from "../assets/img/Experience/Meril.png";
+import chaturaIT from "../assets/img/Experience/chaturaIT.png";
+import Byts from "../assets/img/Experience/Bytslogo.png";
+import destination from "../assets/img/Experience/destination.png";
 
 const Experience = () => {
   const experiences = [
     {
-      title: 'Software Development Engineer | Intern',
-      company: 'Miniorange',
-      date: 'july - Dec 2024',
-      icon: miniorange,
+      title: "Software Developer-1 | Full Time",
+      company: "Meril (NUVO AI)",
+      date: "September 2025 – Present",
+      icon: Meril,
     },
     {
-      title: 'Full Stack Developer | Summer Intern',
-      company: 'Henotic technologies',
-      date: 'Mar - May 2023',
-      icon: henotic_logo,
+      title: "Software Development & Instructor | Full Time",
+      company: "ChaturaIT Learnings",
+      date: "June 2025 – Sep 2025",
+      icon: chaturaIT,
+    },
+    {
+      title: "Graduate Engineering Trainee | Internship",
+      company: "Byts India",
+      date: "Oct 2024 – Jan 2025",
+      icon: Byts,
     },
   ];
 
   return (
-    <div className="App" id="experience">
-      <Container className='py-5'>
-        <h1 className="head pb-5 text-start text-white m-0">Work Experience</h1>
-        <VerticalTimeline className="py-5">
-          {experiences.map((experience, index) => (
+    <SectionWrapper
+      id="experience"
+      direction="right"
+      className="experience-section"
+    >
+      <Container className="py-5">
+        <h1 className="head pb-5 text-start text-white m-0">
+          Work Experience
+        </h1>
+
+        <VerticalTimeline className="py-4">
+
+          {experiences.map((exp, i) => (
             <VerticalTimelineElement
-              key={index}
-              className="vertical-timeline-element--work"
+              key={i}
               contentStyle={{
-                color: '#000',
-                padding: '17px',
-                borderRadius: '30px',
-                boxShadow: '0px 0px 5px rgb(198, 198, 198)',
-                border:'7px solid rgb(111, 113, 120)',
-                minWidth:'46%'
+                background: "rgba(0,0,0,0.55)",
+                backdropFilter: "blur(12px)",
+                color: "#fff",
+                padding: "22px",
+                borderRadius: "22px",
+                boxShadow: "0px 0px 20px rgba(0,255,255,0.15)",
+                border: "1px solid rgba(0,255,255,0.15)",
               }}
               contentArrowStyle={{
-                borderRight: '7px solid rgb(211, 211, 211)',
+                borderRight: "7px solid rgba(0,255,255,0.2)",
               }}
-
               iconStyle={{
-                background: '#000',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
+                background: "#000",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 0 20px rgba(0,255,255,0.5)",
               }}
               icon={
                 <div className="text-center bg-dark rounded-circle w-75">
                   <img
                     src={destination}
-                    alt={`${experience.title} icon`}
+                    alt="icon"
                     style={{
-                      objectFit: 'contain',
-                      padding: '3px',
+                      padding: "4px",
+                      objectFit: "contain",
                     }}
                   />
                 </div>
               }
             >
-              <div className="d-flex rounded-lg">
-                {/* Left Section: Image */}
-                <div className="w-25 flex-shrink-0">
+              {/* CARD CONTENT */}
+              <div
+                className="d-flex flex-wrap gap-3"
+                style={{ alignItems: "center" }}
+              >
+                {/* LEFT LOGO */}
+                <div
+                  className="flex-shrink-0"
+                  style={{
+                    width: "80px",
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
                   <img
-                    src={experience.icon}
-                    alt={experience.title}
-                    className="w-75 object-cover"
+                    src={exp.icon}
+                    alt={exp.title}
+                    style={{
+                      width: "70px",
+                      height: "70px",
+                      objectFit: "contain",
+                      filter: "drop-shadow(0px 0px 8px rgba(0,255,255,0.4))",
+                    }}
                   />
                 </div>
 
-                {/* Right Section: Content */}
-                <div className="w-75 p-6 flex flex-col justify-center">
-                  <p className='fs-6 m-0'>
-                    {experience.title}
+                {/* RIGHT TEXT */}
+                <div
+                  className="flex-grow-1"
+                  style={{ minWidth: "220px" }}
+                >
+                  <p className="m-0 fs-5 fw-bold" style={{ color: "#ffffff" }}>
+                    {exp.title}
                   </p>
 
                   <p
-                    className="text-sm font-medium m-0"
-                    style={{ fontFamily: 'Comic Neue' }}
+                    className="m-0 fs-6"
+                    style={{
+                      color: "#00eaff",
+                      fontWeight: 600,
+                      marginTop: "2px",
+                    }}
                   >
-                    {experience.company}
-                  </p>
-                  <p className="text-secondary mt-1">
-                    {experience.date}
+                    {exp.company}
                   </p>
 
+                  <p
+                    className="mt-2 fs-6"
+                    style={{
+                      color: "#bfbfbf",
+                      letterSpacing: "0.3px",
+                    }}
+                  >
+                    {exp.date}
+                  </p>
                 </div>
-
               </div>
-
-
             </VerticalTimelineElement>
           ))}
+
         </VerticalTimeline>
       </Container>
-    </div>
+    </SectionWrapper>
   );
 };
 

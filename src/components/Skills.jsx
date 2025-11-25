@@ -1,8 +1,6 @@
 import React from 'react';
 import { Card, Container, Row } from 'react-bootstrap';
 import htmlicon from "../assets/img/skills icons/HTMLicon.png";
-import aiicon from "../assets/img/skills icons/AIicon.png";
-import mlicon from "../assets/img/skills icons/MLicon.png";
 import cssicon from "../assets/img/skills icons/cssicon.png";
 import jsicon from "../assets/img/skills icons/jsicon.png";
 import pythonicon from "../assets/img/skills icons/pythonicon.png";
@@ -12,20 +10,32 @@ import C from "../assets/img/skills icons/c++ icon.png";
 import java from "../assets/img/skills icons/java icon.png";
 import springboot from "../assets/img/skills icons/spring boot logo.png";
 import API from "../assets/img/skills icons/API icon.webp";
+import Reactjs from "../assets/img/reactjs.png";
+import Node from "../assets/img/nodejs.png";
+import Express from "../assets/img/expressjs.png";
+import GitLab from "../assets/img/gitlab.png";
+import Minio from "../assets/img/minio.png";
+import cassandra from "../assets/img/cassandra.png";
+import sql from "../assets/img/sql.png";
 
 const skillsData = [
     { title: 'C++', icon: C },
     { title: 'Java', icon: java },
-    { title: 'Spring Boot', icon: springboot },
     { title: 'Python', icon: pythonicon },
-    { title: 'JavaScript', icon: jsicon },
-    { title: 'APIs', icon: API },
     { title: 'HTML', icon: htmlicon },
     { title: 'CSS', icon: cssicon },
+    { title: 'Spring Boot', icon: springboot },
+    { title: 'JavaScript', icon: jsicon },
+    { title: 'Reactjs', icon: Reactjs },
+    { title: 'Node', icon: Node },
+    { title: 'express', icon: Express },
+    { title: 'APIs', icon: API },
     { title: 'Git', icon: git },
+    { title: 'Gitlab', icon: GitLab },
     { title: 'GitHub', icon: github },
-    { title: 'Machine Learning', icon: mlicon },
-    { title: 'Artificial Intelligence', icon: aiicon },
+    { title: 'Minio', icon: Minio },
+    { title: 'Cassandra', icon: cassandra },
+    { title: 'SQL', icon: sql },
     
 ];
 

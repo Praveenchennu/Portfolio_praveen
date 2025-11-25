@@ -23,7 +23,7 @@ const Footer = () => {
                             </p>
                             <p className='ps-4 d-flex'>
                                 <img src={pin} alt="pin" className='pin-icon pe-3' />
-                                Hyderabad,Telangana
+                            Bhimavaram,AndhraPradesh
                             </p>
                         </div>
                     </Col>

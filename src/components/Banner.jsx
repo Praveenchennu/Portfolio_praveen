@@ -1,82 +1,136 @@
-import React, { useState, useEffect } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { ArrowRightCircle } from "react-bootstrap-icons";
+import { motion } from "framer-motion";
+import SectionWrapper from "./SectionWrapper";
 import bannerimg from "../assets/img/header-img.png";
-import { ArrowRightCircle } from 'react-bootstrap-icons';
-import 'animate.css';
+import "animate.css";
+
 const Banner = () => {
-  const [text, setText] = useState('');
+  const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [delta, setDelta] = useState(200); // Speed of typing and deleting
-  const [index, setIndex] = useState(0);
-  const fullText = "Full Stack Developer !!"; 
-  const period = 2000; 
+  const [delta, setDelta] = useState(200);
+  const fullText = "Full Stack Developer | System Design Enthusiast!!";
+  const period = 2000;
 
-  // Handle the typing and deleting effect
   useEffect(() => {
-    const ticker = setInterval(() => {
-      tick();
-    }, delta);
+    async function trackVisitor() {
+      const browserName = navigator.userAgent;
 
-    return () => clearInterval(ticker); // Cleanup the interval when component unmounts
-  }, [text]);
-
-  const tick = () => {
-    const updatedText = isDeleting
-      ? fullText.substring(0, text.length - 1) // Delete one character
-      : fullText.substring(0, text.length + 1); // Add one character
-
-    setText(updatedText);
-
-    if (isDeleting) {
-      setDelta(100); // Speed up when deleting
-    } else {
-      setDelta(200); // Typing speed
+      try {
+        await fetch("https://portfolio-backend-fois.onrender.com/track-visitor", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ browser: browserName }),
+        });
+      } catch (error) {
+        console.log("Tracking failed:", error);
+      }
     }
 
-    if (!isDeleting && updatedText === fullText) {
+    trackVisitor();
+  }, []);
+
+  // Typewriter effect
+  useEffect(() => {
+    const ticker = setInterval(() => tick(), delta);
+    return () => clearInterval(ticker);
+  }, [text, isDeleting]);
+
+  const tick = () => {
+    const updated = isDeleting
+      ? fullText.substring(0, text.length - 1)
+      : fullText.substring(0, text.length + 1);
+
+    setText(updated);
+
+    setDelta(isDeleting ? 60 : 120);
+
+    if (!isDeleting && updated === fullText) {
       setIsDeleting(true);
-      setIndex(index + 1);
-      setDelta(period); // Wait before deleting
-    } else if (isDeleting && updatedText === '') {
+      setDelta(period);
+    } else if (isDeleting && updated === "") {
       setIsDeleting(false);
     }
   };
 
   return (
-    <section className='banner' id="banner">
-      {/* Video background */}
-      <div className="video-background">
-        <video autoPlay muted loop className="background-video">
-          <source src="https://static.videezy.com/system/resources/previews/000/018/961/original/blue.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+    <SectionWrapper id="banner" direction="left" className="banner">
+      <Container>
+        <Row className="flex-column-reverse flex-lg-row align-items-center">
 
-      {/* Banner content */}
-      <Container className=''>
-        <div className='d-flex flex-column-reverse flex-lg-row px-0 px-md-0'>
-          <Col xs={12} md={12} lg={8} xl={7} className='animate__animated animate__fadeIn'>
-            <span className='tagline fs-5 mt-4'>Welcome to my portfolio ..!</span>
-            <h1 className='name'>
-              Hi... 👋 I'm Praveen Chennu ! <br/><span className="txt-rotate"><span className="wrap">{text}</span></span>
-            </h1>
-            <p className='des fs-5 pb-5 justify-text'>
-              <span className='tagline pb-0 mb-0 fs-5'>Aspiring Software Developer</span> with a passion for building scalable applications and exploring innovative solutions using modern technologies.
-              Dedicated to continuous improvement, collaboration, and delivering impactful results.
-              Committed to fostering teamwork and contributing to the growth of the organization.
-            </p>
-            <a href="#connect">
-              <button className="border letsconnect mt-0 p-3 rounded rounded-3 fs-5 animate__animated animate__slideRight">
-                Let’s Connect <ArrowRightCircle className="arrow ms-2 fs-4" />
+          {/* LEFT TEXT BLOCK */}
+          <Col xs={12} lg={7} className="animate__animated animate__fadeIn">
+            <motion.span
+              className="tagline fs-5 mt-4 d-inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              Welcome to my portfolio ..!
+            </motion.span>
+
+            <motion.h1
+              className="name"
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+            >
+              Hi... 👋 I’m Praveen Chennu.
+              <br />
+              <span className="txt-rotate">
+                <span className="wrap">{text}</span>
+              </span>
+            </motion.h1>
+
+            <motion.p
+              className="des fs-5 pb-4 justify-text"
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              <span className="tagline pb-0 mb-0 fs-5">
+                
+              </span>{" "}
+              I’m a results-oriented Full Stack Developer currently contributing to @Meril, a global product-based company, where I build scalable systems, optimize end-to-end performance, and deliver clean, maintainable, production-grade code.
+
+              With a deep interest in architecture design, API engineering, and high-quality UI/UX, I focus on creating solutions that are technically sound, user-focused, and aligned with real business impact. I thrive on learning, innovating, and building technology that truly makes a difference.
+            </motion.p>
+
+            <motion.a
+              href="#connect"
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+            >
+              <button className="border letsconnect p-3 rounded-3 fs-5 d-inline-flex align-items-center">
+                Let’s Connect
+                <ArrowRightCircle className="arrow ms-2 fs-4" />
               </button>
-            </a>
+            </motion.a>
           </Col>
-          <Col xs={12} md={6} lg={6} xl={5} className='p-5 py-1 p-md-0 px-lg-4 m-auto'>
-            <img src={bannerimg} alt="My image" className=' bannerimg m-auto animate__animated animate__zoomIn' />
+
+          {/* RIGHT IMAGE */}
+          <Col xs={12} lg={5} className="p-5 d-flex justify-content-center">
+            <motion.div
+              className="neon-ring-wrapper"
+              whileHover={{ scale: 1.03, rotateY: 8, rotateX: -4 }}
+              transition={{ type: "spring", stiffness: 120, damping: 14 }}
+            >
+              <motion.img
+                src={bannerimg}
+                alt="portrait"
+                className="bannerimg m-auto"
+                initial={{ opacity: 0, y: 35 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.9 }}
+              />
+            </motion.div>
           </Col>
-        </div>
+
+        </Row>
       </Container>
-    </section>
+    </SectionWrapper>
   );
 };
 
