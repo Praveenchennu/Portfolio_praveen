@@ -290,7 +290,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   align-items: center;
 }
-#banner {
+.banner {
   background: url("./assets/img/banner-bg.png") center/cover no-repeat !important;
 }
 
@@ -385,8 +385,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 
 /* Skills */
-#skills{
-  background:url("https://img.freepik.com/free-vector/abstract-blue-light-pipe-speed-zoom-black-background-technology_1142-9980.jpg?t=st=1737442201~exp=1737445801~hmac=032f93a7981591a029b83374b7430022c7874e7dc8dbdd85571ab5c60933337a&w=996");
+#skills {
+  background: url("./assets/img/new-skills-bg.png");
   background-size: cover;
 }
 
@@ -527,7 +527,7 @@ background:#0a0b0e;
 
 /* Footer */
 #footer{
-  background: url("https://img.freepik.com/free-vector/abstract-background-gradient-modern-design_677411-3055.jpg?t=st=1737618750~exp=1737622350~hmac=7a8d5ee82daaabca607152f8bb3d9d84537c67c14b74d0a87a11512795ff33a1&w=1380");
+  background: url("./assets/img/myprofile.png");
 }
 .foothead {
   font-size: 40px;
@@ -577,7 +577,7 @@ body {
 .banner {
   margin-top: 0;
   padding: 160px 0 100px 0;
-  background: url("./assets/img/banner-bg.png") center/cover no-repeat !important;
+  background: url("./assets/img/myprofile.png") center/cover no-repeat !important;
   position: relative;
   z-index: 1;
   color: white;
@@ -628,4 +628,69 @@ body {
   background: #00eaff;
   border-radius: 5px;
   box-shadow: 0 0 15px #00eaff;
+}
+/* -------------------------------------------
+   FIX — Banner Not Showing
+-------------------------------------------- */
+.banner {
+  margin-top: 0;
+  padding: 160px 0 100px 0;
+  background: url("./assets/img/banner-bg.png") center/cover no-repeat !important;
+  position: relative;
+  z-index: 1;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* --------------------------
+   PROJECT CARD FLIP ANIMATION
+--------------------------- */
+
+.flip-card {
+  perspective: 1200px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  background-color: #212529;
+  color: #fff;
+  overflow: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+}
+
+/* Scrollable description */
+.scroll-description {
+  height: 260px;
+  overflow-y: auto;
+  padding-right: 6px;
+  text-align: left;
+  line-height: 1.45rem;
+}
+
+/* Hide scroll bar (optional) */
+.scroll-description::-webkit-scrollbar {
+  width: 6px;
 }
